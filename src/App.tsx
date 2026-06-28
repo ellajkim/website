@@ -1,6 +1,7 @@
 import PolyWater from './components/PolyWater'
 
 const monoFont = { fontFamily: "'JetBrains Mono', monospace" }
+const displayFont = { fontFamily: "'Space Grotesk', sans-serif" }
 
 const blue = {
   border: 'rgba(49, 120, 198, 0.65)',
@@ -26,7 +27,7 @@ function InfoBox({ title, rows }: { title: string; rows: { date: string; role: s
       className="w-full border rounded-md px-5 py-4"
       style={{ backdropFilter: 'blur(4px)', background: 'rgba(1,12,35,0.50)', borderColor: blue.border, boxShadow: `0 0 10px 0px rgba(49, 120, 198, 0.18), inset 0 0 6px 0px rgba(49, 120, 198, 0.06)` }}
     >
-      <p className="text-base mb-1" style={{ ...monoFont, color: blue.title }}>
+      <p className="text-base mb-1" style={{ ...displayFont, color: blue.title }}>
         {title}
       </p>
       {rows.map(({ date, role }) => (
@@ -53,7 +54,7 @@ export default function App() {
       <div
         className="relative z-10 px-6 py-12 sm:py-16 lg:mx-[25vw] lg:px-0"
       >
-        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight" style={{ ...monoFont, color: blue.text }}>
+        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight" style={{ ...displayFont, color: blue.text }}>
           Ella Kim
         </h1>
         <p className="text-base mt-2" style={{ ...monoFont, color: blue.title }}>CS & Math @ Princeton</p>
