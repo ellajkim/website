@@ -23,7 +23,7 @@ function renderRole(role: string | RolePart[]) {
 function InfoBox({ title, rows }: { title: string; rows: { date: string; role: string | RolePart[] }[] }) {
   return (
     <div
-      className="w-full border rounded-sm px-5 py-4"
+      className="w-full border rounded-md px-5 py-4"
       style={{ backdropFilter: 'blur(4px)', background: 'rgba(1,12,35,0.50)', borderColor: blue.border, boxShadow: `0 0 10px 0px rgba(49, 120, 198, 0.18), inset 0 0 6px 0px rgba(49, 120, 198, 0.06)` }}
     >
       <p className="text-base mb-1" style={{ ...monoFont, color: blue.title }}>
