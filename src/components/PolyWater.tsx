@@ -248,14 +248,33 @@ export default function PolyWater() {
 
     const onLeave = () => { mouse.x = -9999; mouse.y = -9999 }
 
+    const onTouch = (e: TouchEvent) => {
+      const touch = e.touches[0]
+      if (!touch) return
+      mouse.x = touch.clientX
+      mouse.y = touch.clientY
+      lastMoveTime = performance.now()
+      const dx = touch.clientX - lastTX, dy = touch.clientY - lastTY
+      if (dx * dx + dy * dy > TRAIL_MIN_DIST2) {
+        trail.push({ x: touch.clientX, y: touch.clientY, t: performance.now() })
+        lastTX = touch.clientX; lastTY = touch.clientY
+      }
+    }
+
+    const onTouchEnd = () => { mouse.x = -9999; mouse.y = -9999 }
+
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mouseleave', onLeave)
+    window.addEventListener('touchmove', onTouch, { passive: true })
+    window.addEventListener('touchend', onTouchEnd)
     window.addEventListener('resize', init)
 
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseleave', onLeave)
+      window.removeEventListener('touchmove', onTouch)
+      window.removeEventListener('touchend', onTouchEnd)
       window.removeEventListener('resize', init)
     }
   }, [])

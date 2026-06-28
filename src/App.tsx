@@ -30,9 +30,9 @@ function InfoBox({ title, rows }: { title: string; rows: { date: string; role: s
         {title}
       </p>
       {rows.map(({ date, role }) => (
-        <div key={date + JSON.stringify(role)} className="flex w-full gap-6 mb-1 last:mb-0">
+        <div key={date + JSON.stringify(role)} className="flex flex-col sm:flex-row w-full gap-0 sm:gap-6 mb-2 last:mb-0">
           <span
-            className="text-sm whitespace-nowrap pt-px flex-shrink-0"
+            className="text-sm whitespace-nowrap flex-shrink-0"
             style={{ ...monoFont, color: blue.date, minWidth: '18ch' }}
           >
             {date}
@@ -48,13 +48,12 @@ function InfoBox({ title, rows }: { title: string; rows: { date: string; role: s
 
 export default function App() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen h-screen overflow-y-auto">
       <PolyWater />
       <div
-        className="absolute top-0 left-0 right-0 z-10"
-        style={{ padding: '4rem 0', marginLeft: '25vw', marginRight: '25vw' }}
+        className="relative z-10 px-6 py-12 sm:py-16 lg:mx-[25vw] lg:px-0"
       >
-        <h1 className="text-5xl font-semibold leading-tight" style={{ ...monoFont, color: blue.text }}>
+        <h1 className="text-4xl sm:text-5xl font-semibold leading-tight" style={{ ...monoFont, color: blue.text }}>
           Ella Kim
         </h1>
         <p className="text-base mt-2" style={{ ...monoFont, color: blue.title }}>CS & Math @ Princeton</p>
