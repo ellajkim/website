@@ -39,6 +39,10 @@ a::after {
   background: rgba(96, 165, 250, 0.90);
 }
 
+a.no-underline::after {
+  display: none;
+}
+
 a:hover::after {
   animation: underline-draw 0.25s ease forwards;
 }
