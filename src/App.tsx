@@ -75,7 +75,7 @@ export default function App() {
           <InfoBox
             title="Experience"
             rows={[
-              { date: '06/2026 – ', role: ['Machine Learning Intern @ ', { text: 'High Meadows Environmental Institute', href: 'https://environment.princeton.edu/' }] },
+              { date: '06/2026 – ', role: ['Machine Learning Research Intern @ ', { text: 'High Meadows Environmental Institute', href: 'https://environment.princeton.edu/' }] },
               { date: '02/2026 – ', role: ['Researcher (spectral graph theory) @ ', { text: 'Princeton CS', href: 'https://www.cs.princeton.edu/' }] },
               { date: '09/2025 – ', role: ['Software Developer @ ', { text: 'Hoagie Club', href: 'https://hoagie.io'}] } ,
               { date: '02/2024 – 02/2025', role: ['Researcher (cryptography) @ ', { text: 'MIT PRIMES', href: 'https://math.mit.edu/research/highschool/primes/' }] },
