@@ -24,30 +24,25 @@ html, body, #root {
 }
 
 a {
-  position: relative;
   text-decoration: none;
   color: inherit;
+  background-image: linear-gradient(rgba(96, 165, 250, 0.90), rgba(96, 165, 250, 0.90));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1.5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 1.5px;
-  background: rgba(96, 165, 250, 0.90);
+a.no-underline {
+  background-image: none;
 }
 
-a.no-underline::after {
-  display: none;
-}
-
-a:hover::after {
+a:hover {
   animation: underline-draw 0.25s ease forwards;
 }
 
 @keyframes underline-draw {
-  from { width: 0; }
-  to { width: 100%; }
+  from { background-size: 0% 1.5px; }
+  to { background-size: 100% 1.5px; }
 }
